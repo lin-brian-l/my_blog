@@ -1,4 +1,4 @@
-u = User.new(username: "Test", email: "test@test.com", password: "test", password_confirmation: "test")
+u = User.new(username: "Test", email: "test@test.com", password: "test@test.com", password_confirmation: "test@test.com")
 u.save
 
 content_for_entries = [
