@@ -1,2 +1,6 @@
 <h3><a href="/entries/<%= entry.id %>"><%= entry.title %></a></h3>
 <p><%= entry.body %></p>
+
+<% if authorized?(entry.user) %>
+<span><a href="/entries/<%= entry.id %>/edit">Edit</a> | Delete</span>
+<% end %>

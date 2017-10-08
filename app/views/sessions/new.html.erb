@@ -1,5 +1,9 @@
 <h2> Login </h2>
 
+<% if @redirect %>
+<span>You must be logged in to perform that action.</span>
+<% end %>
+
 <% if @welcome %>
 <span>Thank you for registering! You may now log in.</span>
 <% end %>

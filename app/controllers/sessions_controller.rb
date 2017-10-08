@@ -12,4 +12,9 @@ class SessionsController < ApplicationController
       render "/sessions/new"
     end
   end
+
+  def delete
+    reset_session
+    redirect_to "/entries"
+  end
 end
