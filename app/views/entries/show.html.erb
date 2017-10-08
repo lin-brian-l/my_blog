@@ -3,5 +3,7 @@
 <span>Written by <%= @entry.user.username %> at <%= @entry.created_at %>.</span><br><br>
 
 <% if authorized?(@entry.user) %>
-<span><a href="/entries/<%= @entry.id %>/edit">Edit</a> | Delete</span>
+<div class="authorized">
+  <a class="edit_link" href="/entries/<%= @entry.id %>/edit">Edit</a> |<form action="/entries/<%= @entry.id %>" method="post" class="delete_link"><input type="hidden" name="_method" value="delete"><input class="submitLink" type="submit" value="Delete"></form>
+</div>
 <% end %>

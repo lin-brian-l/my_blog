@@ -21,8 +21,10 @@ class ApplicationController < ActionController::Base
     end
 
     def authenticate!
-      @redirect = true
-      render "/sessions/new"
+      if !logged_in?
+        @redirect = true
+        render "/sessions/new"
+      end
     end
 
     def current_user
@@ -34,7 +36,7 @@ class ApplicationController < ActionController::Base
     end
 
     def authorize!(owner)
-      redirect_to '/entries' unless authorized?(owner)
+      render :file => "#{Rails.root}/public/404.html", :status => 404 unless authorized?(owner)
     end
   # end
 

@@ -1,0 +1,11 @@
+<h2>Edit</h2>
+
+<% if @errors %>
+<%= render "/errors" %>
+<% end %>
+
+<form action="/entries/<%= @entry.id %>" method="post">
+  <input type="hidden" name="_method" value="put">
+  <%= render "/entries/entry_form" %>
+  <input type="submit" value="Save Changes">
+</form>

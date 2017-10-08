@@ -13,3 +13,20 @@
  *= require_tree .
  *= require_self
  */
+
+.delete_link, .edit_link, .username_link, .logout_form, .home_link {
+  display: inline-block;
+}
+
+.submitLink {
+  background-color: transparent;
+  text-decoration: underline;
+  border: none;
+  color: blue;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+submitLink:focus {
+  outline: none;
+}

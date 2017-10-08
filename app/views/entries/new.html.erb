@@ -1,5 +1,9 @@
-<h2>Registration</h2>
-<form action="/users" method="post">
-  <input type="text", name="user[username]", value="@user.username">
+<h2>New Entry</h2>
+<% if @errors %>
+<%= render "/errors" %>
+<% end %>
 
+<form action="/entries" method="post">
+  <%= render "/entries/entry_form" %>
+  <input type="submit" value="Submit Entry">
 </form>
