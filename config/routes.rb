@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   resources :entries, controller: 'posts'
 
 # routes for application_controller.rb
-  get '/' => 'entries#index'
+  get '/' => 'posts#index'
 # routes for application_controller.rb
 
 # routes for posts_controller.rb
@@ -15,7 +15,7 @@ Rails.application.routes.draw do
   post '/posts' => 'posts#create'
   put '/posts/:id' => 'posts#update'
   delete '/posts/:id' => 'posts#destroy'
-# routes for entries_controller.rb
+# routes for posts_controller.rb
 
 # routes for sessions_controller.rb
   # named routes (as:) ----------------------------

@@ -5,7 +5,6 @@ class ApplicationController < ActionController::Base
   helper_method :current_user
 
   def index
-    redirect_to "/entries"
   end
 
   def find_and_ensure_entry(id)
