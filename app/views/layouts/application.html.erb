@@ -9,6 +9,13 @@
   </head>
 
   <body>
+    <nav>
+      <% if !logged_in? %>
+      <span><a href="/users/new">Register</a> | <a href="/sessions/new">Login</a> | <a href="/">Home</a></span>
+      <% else %>
+      <span><a href="/users/<%= current_user.id %>"><%= current_user.username %></a> | Logout | <a href="/">Home</a></span>
+      <% end %>
+    </nav>
     <%= yield %>
   </body>
 </html>

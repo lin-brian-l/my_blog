@@ -1,0 +1,16 @@
+<h2> Login </h2>
+
+<% if @welcome %>
+<span>Thank you for registering! You may now log in.</span>
+<% end %>
+
+<% if @error %>
+<span>Your email and password don't match!</span>
+<% end %>
+
+<form method="post", action="/sessions">
+  <input type="text" name="email" placeholder="Email"><br>
+  <input type="password" name="password" placeholder="Password"><br>
+  <input type="submit" value="Login">
+</form>
+

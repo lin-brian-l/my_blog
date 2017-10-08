@@ -1,0 +1,8 @@
+<h2>Entries</h2>
+
+<% @entries.each do |entry| %>
+<div class="entry_<%= entry.id %>">
+  <%= render partial: '/entries/entry_description', locals: {entry: entry} %>
+  <span>Written by <%= entry.user.username %> on <%= entry.created_at %>.</span>
+</div>
+<% end %>
