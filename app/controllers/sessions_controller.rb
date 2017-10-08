@@ -1,5 +1,6 @@
 class SessionsController < ApplicationController
-  def new
+  # def new # <-- typical way; uses url /sessions/new
+  def login # <-- new way; uses url /register
   end
 
   def create

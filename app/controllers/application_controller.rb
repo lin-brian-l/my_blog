@@ -1,6 +1,5 @@
 class ApplicationController < ActionController::Base
   # protect_from_forgery with: :exception
-  # helper_method :find_and_ensure_entry
   helper_method :logged_in?
   helper_method :authorized?
   helper_method :current_user

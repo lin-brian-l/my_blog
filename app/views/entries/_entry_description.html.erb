@@ -1,3 +1,6 @@
-<h3><a href="/entries/<%= entry.id %>"><%= entry.title %></a></h3>
+<!-- <h3><a href="/entries/<%= entry.id %>"><%= entry.title %></a></h3> -->  <!-- old code, links to /entries/:id -->
+<h3><%= link_to entry.title, entry_path(entry.id) %></h3> <!-- new way, still links to /entry/:id -->
 <p><%= entry.body %></p>
-<span>Written by <%= entry.user.username %> on <%= entry.created_at %>.</span>
+
+<!-- <span>Written by <a href="users/<%= entry.user_id %>"><%= entry.user.username %></a> on <%= entry.created_at %>.</span> --> <!-- old code, links to /users/:id -->
+<span>Written by <%= link_to entry.user.username, user_path(entry.user.id) %> on <%= entry.created_at %>.</span> <!-- new way, still links to /users/:id -->

@@ -1,11 +1,13 @@
-class EntriesController < ApplicationController
+class PostsController < ApplicationController
   def index
     @entries = Entry.all
+    render "entries/index"
   end
 
   def new
     authenticate!
     @entry = Entry.new
+    render "entries/new"
   end
 
   def create
@@ -22,12 +24,14 @@ class EntriesController < ApplicationController
 
   def show
     @entry = find_and_ensure_entry(params[:id])
+    render "entries/show"
   end
 
   def edit
     authenticate!
     @entry = find_and_ensure_entry(params[:id])
     authorize!(@entry.user)
+    render "entries/edit"
   end
 
   def update
