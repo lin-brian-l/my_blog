@@ -1,7 +1,6 @@
 class UsersController < ApplicationController
-  # def new # <-- typical way; uses url /users/new
-  def register # <-- new way; uses url /register
-    # @user = User.new # <-- can't get this to work with register?
+  def new
+    @user = User.new()
   end
 
   def create

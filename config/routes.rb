@@ -20,7 +20,7 @@ Rails.application.routes.draw do
 # routes for sessions_controller.rb
   # named routes (as:) ----------------------------
   # get '/sessions/new' => 'sessions#new' # <-- typical way
-  get '/login', to: 'sessions#new', as: 'login' # <-- new way
+  get '/login', to: 'sessions#new', as: :login # <-- new way
   # ----------------------------------------------
 
   post '/sessions' => 'sessions#create'
@@ -30,7 +30,7 @@ Rails.application.routes.draw do
 # routes for users_controller.rb
   # named routes (as:) ---------------------------
   # get '/users/new' => 'users#new' # <-- typical way
-  get '/register', to: 'users#new', as: 'register' # <-- new way
+  get 'register', to: 'users#new', as: :register # <-- new way
   # ----------------------------------------------
   post '/users' => 'users#create'
   get '/users/:id' => 'users#show'
