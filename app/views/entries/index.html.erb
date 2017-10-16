@@ -3,6 +3,22 @@
 <% end %>
 
 <h2>Entries</h2>
+<!-- Kaminari stuff: https://github.com/kaminari/kaminari -->
+<%= paginate @entries, views_prefix: 'templates' %>
+<%= paginate @entries %>
+<!-- ^ default; window: 0, outer_window: 0 -->
+<%= paginate @entries, window: 2 %>
+<!-- ^ left/right window range of 2 -->
+<%= paginate @entries, outer_window: 3 %>
+<!-- ^ outer range of 3 when outside window -->
+<%= paginate @entries, left: 1, right: 3 %>
+<!-- ^ left and right ranges of outside window -->
+<%= paginate @entries, param: :stuff %>
+<!-- ^ allows you to pass string queries -->
+<%= page_entries_info @entries %>
+<!-- ^ displays stats for total entries -->
+<%= link_to_prev_page @entries, 'Previous Page' %>
+
 
 <% @entries.each do |entry| %>
 <div class="entry_<%= entry.id %>">

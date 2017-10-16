@@ -8,4 +8,7 @@ class User < ApplicationRecord
   has_secure_password
   validates :password, { presence: true,
                          length: { minimum: 6 } }
+
+  # paginates_per 30
+  # max_paginates_per 100
 end

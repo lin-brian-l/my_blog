@@ -1,6 +1,7 @@
 class PostsController < ApplicationController
   def index
-    @entries = Entry.all
+    # @entries = Entry.order(:id)
+    @entries = Entry.order(:id).page params[:page]
     render "entries/index"
   end
 
